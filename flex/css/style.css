@@ -1,4 +1,4 @@
-/*Обнуление*/
+/*--------------------start-zero-style------------------------------*/
 * {
     padding: 0;
     margin: 0;
@@ -73,13 +73,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------end-zero-style---------------------------------------------------------------*/
-/*--------------------------start-burger-style-------------------------------------------------------------*/
-
+/* https://www.educative.io/edpresso/how-to-add-scrollbar-to-div */
+/* https://medium.com/@krokhin.ezh/как-создать-гамбургер-меню-используя-только-css-и--html-c6abf7c32c6d */
+/* https://youtu.be/chJQofBSx94 */
+/*--------------------------start-burger-style------------------------------------------------------------*/
 
 html, body {
     height: 100%;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .wrapper {
@@ -110,10 +112,8 @@ html, body {
     z-index: 2;
 }
 
-
 .header__body {
     position: relative;
-    /*z-index: 2;*/
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -151,7 +151,6 @@ html, body {
 }
 
 .header__list li {
-    /*list-style: none;*/
     margin: 0 0 0 20px;
 }
 
@@ -159,14 +158,9 @@ html, body {
     color: #fff;
     text-transform: uppercase;
     font-size: 16px;
-    /*text-decoration: none;*/
 }
 
 .content {
-    padding: 100px 0 0 0;
-}
-
-.container {
 }
 
 .content__text p {
@@ -175,10 +169,16 @@ html, body {
     margin: 0 0 20px 0;
 }
 
+.content__text {
+    /*position: fixed;*/
+    padding: 100px 0 0 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
 @media (max-width: 767px) {
 
     .content {
-        padding: 70px 0 0 0;
     }
 
     .header__body {
@@ -202,6 +202,11 @@ html, body {
         display: none;
     }
 
+    .content__text {
+        padding: 70px 10px 0 0;
+        position: fixed;
+    }
+
     #header__toggle:checked ~ .header .header__burger > span {
         transform: scale(0);
     }
@@ -220,7 +225,6 @@ html, body {
         top: 0;
         overflow: auto;
     }
-
 
     .header__burger:before, .header__burger:after {
         content: '';
@@ -252,7 +256,7 @@ html, body {
 
     .header__menu {
         position: fixed;
-        top: -100%;
+        top: -300%;
         left: 0;
         width: 100%;
         height: 100%;
