@@ -197,6 +197,7 @@ html, body {
         z-index: 3;
     }
 
+    /*input[type=checkbox] {*/
     #header__toggle {
         opacity: 0;
         display: none;
@@ -207,21 +208,25 @@ html, body {
         position: fixed;
     }
 
-    #header__toggle:checked ~ .header .header__burger > span {
+    /*input[type=checkbox]:checked ~ .header .header__burger > span {*/
+    #header__toggle:checked ~ .header__burger > span {
         transform: scale(0);
     }
 
-    #header__toggle:checked ~ .header .header__burger:before {
+    /*input[type=checkbox]:checked ~ .header .header__burger:before {*/
+    #header__toggle:checked ~ .header__burger:before {
         transform: rotate(45deg);
         top: 9px;
     }
 
-    #header__toggle:checked ~ .header .header__burger:after {
+    /*input[type=checkbox]:checked ~ .header .header__burger:after {*/
+    #header__toggle:checked ~ .header__burger:after {
         transform: rotate(-45deg);
         bottom: 9px;
     }
 
-    #header__toggle:checked ~ .header .header__menu {
+    /*input[type=checkbox]:checked ~ .header .header__menu {*/
+    #header__toggle:checked ~ .header__menu {
         top: 0;
         overflow: auto;
     }
