@@ -1,0 +1,198 @@
+/*--------------------start-zero-style------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*--------------------------end-zero-style---------------------------------------------------------------*/
+html, body {
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+/* https://youtu.be/Cj8hWtm_40M?list=PLM6XATa8CAG4uCli-pMvuvwj46UaQoqIc */
+/* https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property */
+/* -------------------------start-spoiler*/
+.wrapper {
+    height: 100%;
+    padding: 50px;
+}
+
+.block {
+
+}
+
+.block__item {
+    /*display: block;*/
+    margin: 0 0 20px 0;
+}
+
+.block__item input {
+    display: none;
+}
+
+
+.block__title {
+    text-transform: uppercase;
+    /*lts2*/
+    letter-spacing: 2px;
+    position: relative;
+    padding: 0 0 0 30px;
+    /*cur:p*/
+    cursor: pointer;
+}
+
+.block__title:before,
+.block__title:after {
+/*cnt*/
+    content: '';
+    width: 10px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    top: 8px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.block__title:before {
+    /*trf:r*/
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);
+    left: 0;
+}
+.block__title:after {
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+    left: 8px;
+}
+
+.block__text {
+    display: none;
+    padding: 10px 0 0 0;
+    /*animation: fade-out 3s;*/
+}
+
+.block__item input:checked ~ .block__text {
+    display: block;
+    animation: fade-in 3s;
+}
+
+.block__item input:checked ~ .block__title:before,
+.block__item input:checked ~ .block__title:after {
+    background-color: #f60606;
+}
+.block__item input:checked ~ .block__title:before {
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+}
+.block__item input:checked ~ .block__title:after {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+
+/*.block__item input:not(:checked) ~ .block__text {
+    display: none;
+    animation: fade-out 3s;
+}*/
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}*/
+
+/* -------------------------end-spoiler*/
