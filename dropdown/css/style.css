@@ -1,0 +1,284 @@
+/*region---------------------------------zero-style--------------------------------------------------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*endregion--------------------------end-zero-style----------------------------------------------------------*/
+
+html, body {
+    height: 100%;
+    background-color: #333;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.wrapper {
+    height: 100%;
+    padding: 50px;
+}
+
+.menu {
+
+}
+
+/*, .menu label.toggle-first*/
+.menu [type="checkbox"] {
+    display: none;
+}
+
+.menu [type="radio"] {
+    display: none;
+}
+
+.sub-menu__list > a {
+    margin: 0 30px 0 0;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu__list {
+    display: flex;
+}
+
+.menu__list > li {
+    margin: 0 30px 0 0;
+}
+
+.menu__link {
+    color: #ffffff;
+    padding: 5px 0;
+}
+
+.sub-menu__list {
+    display: none;
+    min-width: 300px;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    margin: 0  auto;
+}
+
+.menu label.toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sub-menu__list > li {
+    background-color: #fff;
+}
+
+.arrow {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 0;
+    height: 0;
+}
+
+.menu__arrow {
+    border-top: 10px solid #ffffff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.sub-menu__arrow {
+    right: 10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #000000;
+}
+
+
+.sub-menu__link {
+    color: #000;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 0 10px;
+}
+
+.sub-sub-menu__list {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    padding: 0 0 0 5px;
+}
+
+.sub-sub-menu__list > li {
+    background-color: #000000;
+}
+
+.sub-sub-menu__link {
+    color: #ffffff;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 0 10px;
+}
+
+/*region------------------------media-------------------------------------*/
+
+/* Extra small devices (phones, 599px and down) */
+/*@media only screen and (max-width: 599px) and (orientation: portrait) {*/
+@media only screen and (max-width: 599px) {
+    .wrapper {
+        padding: 10px;
+    }
+    .menu__list {
+        display: block;
+        width: 100%;
+    }
+    .menu__list>li {
+        margin: 0 0 10px 0;
+    }
+    .sub-menu__list {
+        position: relative;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    .sub-sub-menu__list {
+        padding: 0 5px;
+        position: relative;
+        left: 0;
+    }
+    .sub-menu__arrow {
+        border-top: 10px solid #000000;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-bottom: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 900px and up) */
+@media only screen and (min-width: 900px) {
+}
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+/* Extra large devices (large desktops, 1800px and up) */
+@media only screen and (min-width: 1800px) {
+}
+
+/* https://ferie.medium.com/detect-a-touch-device-with-only-css-9f8e30fa1134 */
+@media (hover: hover) and (pointer: fine) {
+    .menu__list > li:hover .sub-menu__list {
+        display: block;
+    }
+
+    .sub-menu__list > li:hover .sub-sub-menu__list {
+        display: block;
+    }
+
+    .arrow {
+        display: none;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .menu__list li > input.toggle:checked ~ .sub-menu__list {
+        display: block;
+        margin: 0 30px 0 0;
+    }
+
+    .sub-menu__list li > input.toggle:checked ~ .sub-sub-menu__list {
+        display: block;
+    }
+
+    .menu__list li > input.toggle:checked ~ .toggle .arrow {
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+
+    .menu__list li > input.toggle ~ .menu__link {
+        margin: 0 30px 0 0;
+    }
+}
+
+/*endregion-------------------------------media----------------------------------------------*/
