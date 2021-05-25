@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <title>Custom Checkboxes</title>
+    <meta content="width=device-width" name="viewport">
+    <link href="css/style.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<!--.wrapper>.content>.tabs>nav.tabs__items>^.tabs__body^.text>lorem-->
+<div class="wrapper">
+    <div class="content">
+        <div class="tabs">
+            <nav class="tabs__items">
+                <!--            First
+                                Second
+                                Third
+                                (a.tabs__item[href=#tab_$$]>span{$# tab})*-->
+                <a class="tabs__item" href="#tab_01"><span>First tab</span></a>
+                <a class="tabs__item" href="#tab_02"><span>Second tab</span></a>
+                <a class="tabs__item" href="#tab_03"><span>Third tab</span></a>
+            </nav>
+            <div class="tabs__body">
+                <!--                First
+                                    Second
+                                    Third
+                                    .tabs__block#tab_$${$# tab. }*>lorem-->
+                <div class="tabs__block" id="tab_01">First tab. Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Aperiam asperiores, autem commodi consequuntur dicta dignissimos doloribus ea est facere
+                    facilis iure magni maxime minus omnis tempore? Autem deserunt eos quasi.First
+                </div>
+                <div class="tabs__block" id="tab_02">Second tab. Amet asperiores aspernatur assumenda beatae dolores
+                    ea eaque eius et, illo ipsa labore minus necessitatibus pariatur quam quas quasi repudiandae
+                    saepe sapiente similique sint sit suscipit, tempora unde vitae, voluptatum.Second Lorem ipsum
+                    dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam asperiores consectetur
+                    corporis eaque excepturi labore libero nesciunt numquam obcaecati placeat reprehenderit
+                    similique sint, suscipit tempore totam unde voluptatibus?
+                </div>
+                <div class="tabs__block" id="tab_03">Third tab. Cupiditate doloribus eligendi explicabo
+                    necessitatibus nemo officia tempora velit, vitae. Cupiditate exercitationem fugiat illum iusto
+                    libero magnam maiores nostrum obcaecati, optio perferendis placeat quia quibusdam quisquam
+                    repellat sed voluptate voluptates.Third
+                </div>
+            </div>
+        </div>
+        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquid earum esse
+            excepturi facilis illum itaque, maiores mollitia obcaecati odit omnis pariatur quae rem sed soluta totam vel
+            voluptatem?
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
